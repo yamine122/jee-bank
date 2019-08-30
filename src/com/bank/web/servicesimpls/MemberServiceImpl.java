@@ -1,12 +1,12 @@
-package com.bank.servicesimpls;
+package com.bank.web.servicesimpls;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import com.bank.domains.CustomerBean;
-import com.bank.domains.EmployeeBean;
-import com.bank.domains.MemberBean;
-import com.bank.services.MemberService;
+import com.bank.web.domains.CustomerBean;
+import com.bank.web.domains.EmployeeBean;
+import com.bank.web.domains.MemberBean;
+import com.bank.web.services.MemberService;
 
 public class MemberServiceImpl implements MemberService {
 	

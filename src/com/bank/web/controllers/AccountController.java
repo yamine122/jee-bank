@@ -7,23 +7,21 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.bank.domains.AccountBean;
+import com.bank.web.services.AccountService;
+import com.bank.web.servicesimpls.AccountServiceImpl;
+
+
 
 @WebServlet("/account.do")
 public class AccountController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
-    public AccountController() {
-        super();
-    }
-
+ 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String name = request.getParameter("money");
-		AccountBean a = new AccountBean();
-		
-		a.setMoney(name);
-		
-		System.out.println(a.toString());
+		System.out.println("AccountController 진입함");
+		AccountService service = new AccountServiceImpl();
+		String money = request.getParameter("money");
+		service.createAccount(money);
 		
 		response.getWriter().append("Served at: ").append(request.getContextPath());
 	}

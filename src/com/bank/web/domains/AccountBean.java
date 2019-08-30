@@ -1,4 +1,4 @@
-package com.bank.domains;
+package com.bank.web.domains;
 
 import java.io.Serializable;
 
@@ -32,7 +32,7 @@ public class AccountBean implements Serializable{
 
 	@Override
 	public String toString() {
-		return "AccountBean [AccountNum=" + AccountNum
+		return "계좌정보 [AccountNum=" + AccountNum
 				+ ", regDate=" + regDate
 				+ ", money=" + money + "]";
 	}

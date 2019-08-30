@@ -1,10 +1,10 @@
-package com.bank.services;
+package com.bank.web.services;
 
 import java.util.List;
 
-import com.bank.domains.*;
+import com.bank.web.domains.*;
 public interface AccountService {
-	public void createAccount(int money);
+	public void createAccount(String money);
 	public String createAccountNum();
 	// 계좌번호 생성(1234-5678)
 	public List<AccountBean> findAll();

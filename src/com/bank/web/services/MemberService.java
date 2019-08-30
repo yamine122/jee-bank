@@ -1,7 +1,7 @@
-package com.bank.services;
+package com.bank.web.services;
 import java.util.List;
 
-import com.bank.domains.*;
+import com.bank.web.domains.*;
 
 public interface MemberService {
 	public void join(CustomerBean param);

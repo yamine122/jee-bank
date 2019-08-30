@@ -1,4 +1,4 @@
-package com.bank.domains;
+package com.bank.web.domains;
 
 public class EmployeeBean extends MemberBean{
 	

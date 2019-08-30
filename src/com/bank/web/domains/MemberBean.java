@@ -1,4 +1,4 @@
-package com.bank.domains;
+package com.bank.web.domains;
 
 import java.io.Serializable;
 

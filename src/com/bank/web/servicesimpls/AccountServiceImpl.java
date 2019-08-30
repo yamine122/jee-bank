@@ -1,4 +1,4 @@
-package com.bank.servicesimpls;
+package com.bank.web.servicesimpls;
 
 
 import java.text.SimpleDateFormat;
@@ -7,8 +7,8 @@ import java.util.Date;
 import java.util.List;
 import java.util.Random;
 
-import com.bank.domains.AccountBean;
-import com.bank.services.AccountService;
+import com.bank.web.domains.AccountBean;
+import com.bank.web.services.AccountService;
 
 public class AccountServiceImpl implements AccountService{
 	
@@ -17,12 +17,16 @@ public class AccountServiceImpl implements AccountService{
 	public AccountServiceImpl() {
 		accounts = new ArrayList<>();
 	}
+	
+	
 	@Override
-	public void createAccount(int money) {
+	public void createAccount(String money) {
 		AccountBean ac = new AccountBean();
 		ac.setAccountNum(createAccountNum());
-		ac.setMoney(money+"");
+		ac.setMoney(money);
 		ac.setRegDate(findDate());
+		System.out.println(ac.toString());
+		accounts.add(ac);
 		
 		
 	}
@@ -31,12 +35,11 @@ public class AccountServiceImpl implements AccountService{
 	public String createAccountNum() {
 		String accountNum = "";
 		Random r = new Random();
-		int num = r.nextInt(10);
-		for(int i = 0 ; i < 10 ; i++) {
+		for(int i = 0 ; i < 9 ; i++) {
 			if( i== 4) {
 				accountNum += "-";
 			}else {
-				accountNum += num;
+				accountNum += r.nextInt(10);
 			}
 			}
 		
