@@ -7,15 +7,19 @@ import java.util.Date;
 import java.util.List;
 import java.util.Random;
 
+import com.bank.web.daoimpls.MemberDAOImpl;
+import com.bank.web.daos.MemberDAO;
 import com.bank.web.domains.AccountBean;
 import com.bank.web.services.AccountService;
 
 public class AccountServiceImpl implements AccountService{
 	
 	private List<AccountBean> accounts;
+	private MemberDAO dao;
 	
 	public AccountServiceImpl() {
 		accounts = new ArrayList<>();
+		dao = new MemberDAOImpl();
 	}
 	
 	

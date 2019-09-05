@@ -8,12 +8,18 @@
 </head>
 <body>
 <div>
-	<h2>회원가입</h2>
-	 <form action="">
+	<h2>로그인</h2>
+	 <form id="login" action="">
 	 	아이디<input type="text" /> <br/>
 	 	비밀번호<input type="text" /> <br/>
 	 	<input type="submit" value = "전송">
 	</form>
 </div>
 </body>
+<script>
+$('#login').submit(function(){
+	alert('성공');
+});
+</script>
+
 </html>
