@@ -26,6 +26,7 @@ public class MemberServiceImpl implements MemberService {
 	public void join(CustomerBean param) {
 		//customers.add(param);
 		dao.insertCustomer(param);
+		
 	}
 
 	@Override
@@ -102,9 +103,10 @@ public class MemberServiceImpl implements MemberService {
 	@Override
 	public CustomerBean login(MemberBean param) {
 		CustomerBean customer = new CustomerBean();
+		
 		customer.setId(param.getId());
 		customer.setPw(param.getPw());
-		
+		dao.login(customer);
 		
 		
 		return dao.login(customer);
