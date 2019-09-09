@@ -8,8 +8,10 @@ public class Sender {
 			HttpServletResponse response) {
 		System.out.println("캐리어내부 :" + Receiver.cmd.getView());
 		try{
+			
 			request.getRequestDispatcher(Receiver.cmd.getView())
-			.forward(request, response);
+										.forward(request, response);
+			
 		}catch(Exception e) {
 			e.printStackTrace();
 		}

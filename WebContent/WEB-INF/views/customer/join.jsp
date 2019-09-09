@@ -25,7 +25,7 @@
 </div>
 <script>
 $('#join_form').submit(function(){
-	alert('테스트 클릭5!!');
+	alert('제출중');
 });
 </script>
 </body>

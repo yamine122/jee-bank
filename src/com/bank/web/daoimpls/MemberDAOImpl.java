@@ -47,27 +47,31 @@ public class MemberDAOImpl implements MemberDAO{
 
 	@Override
 	public CustomerBean login(CustomerBean param) {
-	
+		CustomerBean cust = new CustomerBean();
 		try {
 			File file = new File(Constants.FILE_PATH+"190906.txt");
 			BufferedReader reader = new BufferedReader(new FileReader(file));
 			String login = reader.readLine();
 						   reader.close();
 			String[] arr = login.split(",");
-			param.setId(arr[0]);
-			param.setPw(arr[1]);
-			param.setName(arr[2]);
-			param.setSsn(arr[3]);
-			param.setCredit(arr[4]);
 			
 			
+			if(arr[0].equals(param.getId())) {
+				cust.setId(arr[0]);
+				cust.setPw(arr[1]);
+				cust.setName(arr[2]);
+				cust.setSsn(arr[3]);
+				cust.setCredit(arr[4]);
+			}else {
+				cust = null;
+			}
 			
 		
 			
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		return param;
+		return cust;
 	}
 
 }

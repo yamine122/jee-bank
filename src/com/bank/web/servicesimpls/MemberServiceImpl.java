@@ -101,15 +101,15 @@ public class MemberServiceImpl implements MemberService {
 	}*/
 
 	@Override
-	public CustomerBean login(MemberBean param) {
+	public CustomerBean login(CustomerBean param) {
 		CustomerBean customer = new CustomerBean();
 		
-		customer.setId(param.getId());
-		customer.setPw(param.getPw());
-		dao.login(customer);
+		/*customer.setId(param.getId());
+		customer.setPw(param.getPw());*/
+		customer = dao.login(param);
 		
 		
-		return dao.login(customer);
+		return customer;
 	}
 
 	/*@Override

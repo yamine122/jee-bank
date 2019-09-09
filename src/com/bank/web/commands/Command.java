@@ -3,7 +3,6 @@ import javax.servlet.http.HttpServletRequest;
 import com.bank.web.pools.Constants;
 import lombok.Data;
 @Data
-//A request is wrapped under an object as command
 public class Command implements Order{
 	protected HttpServletRequest request;
 	protected String action, domain, page, view;
@@ -18,7 +17,7 @@ public class Command implements Order{
 	}
 	public void setDomain() {
 		String path = request.getServletPath();
-		//서블릿패스   >>>>  /member.do
+		//서블릿패스   >>>>  /customer.do
 		System.out.println("서블릿 패스가 뭘까:"+path);
 		/*path = path.replace(".do", "");
 		domain = path;*/
@@ -28,5 +27,8 @@ public class Command implements Order{
 	}
 	public void setPage() {
 		page = request.getParameter("page");
+	}
+	public void setView(String domain, String page) {
+		this.view = String.format(Constants.VIEW_PATH, domain,page);
 	}
 }
